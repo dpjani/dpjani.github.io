@@ -1,371 +1,679 @@
-<!DOCTYPE HTML>
-<!--
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Dhruv Jani</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90843908-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhruv Jani</title>
+<meta name="description" content="Dhruv Jani — Researcher · Builder. I turn complex problems into clear, data-driven decisions.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90843908-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-90843908-1');
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
 
-		  gtag('config', 'UA-90843908-1');
-		</script>
-		<style>
-			.school_container {
-			  display: flex;
-			  align-items: center;
-			  justify-content: flex-start;
-			  margin-bottom: 20px;
-			}
-		
-			.school_stuff {
-			  flex: 1;
-			  margin-right: 20px;
-			}
-		
-			.school_logo img {
-			  display: inline-block;
-			  vertical-align: middle;
-			  max-width: 100%;
-			  height: auto;
-			}
-		  </style>
+:root {
+  --bg: #f4f1ea;
+  --bg-2: #ebe7de;
+  --text: #1a1714;
+  --text-dim: #5a5550;
+  --text-muted: #9a9590;
+  --accent: #c44536;
+  --accent-light: rgba(196, 69, 54, 0.08);
+  --border: rgba(26, 23, 20, 0.12);
+  --grid: #e5e1d8;
+}
 
-	</head>
-	<body class="is-preload">
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+a { text-decoration: none; color: inherit; }
 
-				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>Dhruv Jani</h1>
-							<p> MS Operations Research @ Columbia University <br>
-								BS Mathematics @ University of California  </p>
+/* Grid background */
+.grid-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
 
-							<ul class="items">
-								<li>
-									<h3>Email</h3>
-									jani.dhruv1[at]gmail.com
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 1000;
+  width: 0;
+}
 
-								</li>
-								<li>
-									<h3>Elsewhere</h3>
-									<ul class="icons">
-										<li><a href="https://twitter.com/Dhruv1Jani" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://github.com/optimizedLP" class="icon brands fa-github"><span class="label">Twitter</span></a></li>
-										<li><a href="https://www.linkedin.com/in/dpjani/" class="icon brands fa-linkedin-in"><span class="label">Twitter</span></a></li>
-										<!--<li><a href="https://scholar.google.com/citations?user=xlNV12MAAAAJ&hl=en" class="icon ai ai-google-scholar"><span class="label">Google Scholar</span></a></li> -->
-								</ul>
-								<li>
-						
-								
-									<a href="docs/Dhruv_Jani_Resume.pdf">Resume </a>
-								</li>
-									
-							</ul>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position='center'><img src="images/dhruv_ucd.jpg" width="1110" height="1110" alt=""  /></span>
-						</div>
-					</section>
+/* Chapter nav */
+.chapter-nav {
+  position: fixed;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.chapter-nav a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+.chapter-nav .marker {
+  width: 2px;
+  height: 32px;
+  background: var(--border);
+  transition: all 0.4s;
+  position: relative;
+  flex-shrink: 0;
+}
+.chapter-nav a.active .marker {
+  background: var(--accent);
+  height: 48px;
+}
+.chapter-nav a.active .marker::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.chapter-nav .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s;
+  white-space: nowrap;
+  padding: 4px 10px 4px 12px;
+  background: var(--bg);
+}
+.chapter-nav a:hover .label,
+.chapter-nav a.active .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+.chapter-nav.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
-				<!-- Section -->
-					<section id="first">
-						<header>
-							<h2>ABOUT</h2>
-						</header>
-						<div class="content">
-							<p><strong>Hi, I’m Dhruv.</strong> I recently graduated from Columbia University with a Master’s in Operations Research & Analytics. I started out broadly in data science and optimization, but over time I’ve found myself increasingly interested in quantitative finance and how mathematical models can be used to understand and navigate markets.</p>
+/* Top bar */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: rgba(244, 241, 234, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s;
+}
+.top-bar.scrolled {
+  border-bottom-color: var(--border);
+  padding: 16px 48px;
+}
+.top-bar .name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-							<p>I’ve worked on a mix of ML and research-driven projects with organizations like Apple, NIH, and UC Davis. Right now, I’m focused on building my skills in financial modeling, data-driven strategy, and applying what I know to more market-oriented problems.</p>
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 140px 80px 80px 180px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--border);
+}
+.hero-left {
+  padding-right: 80px;
+}
+.hero .kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero .kicker::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(4rem, 8vw, 9rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -6px;
+  margin-bottom: 32px;
+}
+.hero h1 span {
+  color: var(--accent);
+}
+.hero .lead {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
 
-							<p>Outside of work, I play the piano and follow cricket—both keep me grounded when things get intense.</p>
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1/1;
+  background: var(--bg-2);
+  border: 2px solid var(--text);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  top: 16px; left: 16px;
+  right: -16px; bottom: -16px;
+  border: 2px solid var(--accent);
+  z-index: -1;
+}
 
-							<!-- <p style='margin-bottom:0;'><strong> News: </strong></p>
-								<ul>
-									<li><strong>Dec 2021:</strong> Our paper <a href="https://preprints.jmir.org/preprint/32378"> COVID-19 Infodemiology at Planetary Scale: Charting the Information and Misinformation Landscape to Characterize Misinfodemics Spread on Social Media </a> is accepted to JMIR infodemiology. </li>
-									<li><strong>Sep 2021:</strong> I passed my quals and I am now a PhD candidate :) </li>
-									<li><strong>Aug 2021:</strong> Our paper <a href="https://xmed.jmir.org/2021/3/e29570"> Social media polarization and echo chambers: A case study of COVID-19</a> is published at JMIRx Med.</li>
-									<li><strong>Feb 2021:</strong> Our paper <a href="https://dl.acm.org/doi/10.1145/3449290"> The Wide, the Deep, and the Maverick: Types of Players in Team-based Online Games</a> is accepted to CSCW 2021.</li>
-									<li><strong>Jan 2021: </strong> So happy to announce that I will be joining the Computation Social Science team at Snap as a research intern this summer!</li>
-								</ul> -->
-							
-						</div>
-					</section>
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0px, black 220px);
+  mask-image: linear-gradient(to right, transparent 0px, black 220px);
+}
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+.marquee span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 40px;
+  white-space: nowrap;
+  color: var(--text-dim);
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-				
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Education</h2>
-						</header>
-												<div class='content'>
-							<div class="school">
-								 <div class='school_logo'> <img src='images/cu.png' width="110" height="110"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Columbia University</h4>
-								<p> 2023-2024
-								<br> MS Operations Research & Financial Engineering
-								</p>
+/* Sections */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 120px 80px 120px 180px;
+  border-bottom: 1px solid var(--border);
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 64px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.section-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+.section-header .num {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
 
-								 </div> 
-							 </div> 
-							 <div class='school'> 
-								 <div class='school_logo'> <img src='images/uc_davis.png' width="110" height="110"> </div>  
-								 <div class='school_stuff'> 
-								<h4> University of California, Davis </h4>
-								<p>2019 - 2023
-								<br> BS Mathematical Analytics & Statistics (<i>magna cum laude</i>)</p>
-							 	<!-- <br>GPA: 3.72 <i> magna cum laude</i></p> -->
-							 	 </div> 
-							 </div>
-						</div>
-					</section>
-				<!-- Copyright -->
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-grid .pull-quote {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: var(--accent);
+  font-style: italic;
+  padding-left: 24px;
+  border-left: 3px solid var(--accent);
+}
+.about-grid p {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.about-grid strong {
+  color: var(--text);
+  font-weight: 600;
+}
 
-				
-				<section>
-					<header>
-						<h2>Research</h2>
-					</header>
-					<div class='content'>
+/* Work */
+.work-list {
+  display: flex;
+  flex-direction: column;
+}
+.work-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 48px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.work-item:hover {
+  padding-left: 16px;
+}
+.work-item:hover h4 {
+  color: var(--accent);
+}
+.work-item .date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-top: 6px;
+}
+.work-item h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  transition: color 0.3s;
+}
+.work-item .org {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
 
-						<h3> Columbia University  Irving Medical Center</h3>
-						<ul class='publications'>
-							<li>
-								<h7>Clinical NLP Data Extraction</h7>
-								<br>
-								<p>Research Assistant 
-								<br><i>Feb 2025 - June 2025</i></p>
-							</li>
-						<ul class='publications'>
+/* Education */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.edu-card {
+  border: 2px solid var(--text);
+  padding: 40px;
+  background: var(--bg);
+  transition: all 0.3s;
+}
+.edu-card:hover {
+  background: var(--bg-2);
+  transform: translateY(-4px);
+}
+.edu-card .date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.edu-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+.edu-card p {
+  color: var(--text-dim);
+}
 
-						<h3> National Institutes of Health (NIH) </h3>
-						<ul class='publications'>
-							<li>
-								<h7>IEOR 4511 @ Columbia University</h7>
-								<br>
-								<p>Graduate Research Assistant 
-								<br><i>Sep 2023 - Dec 2023</i></p>
-							</li>
-						</ul>
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.project-card {
+  border: 2px solid var(--text);
+  padding: 32px;
+  background: var(--bg);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.project-card:hover {
+  background: var(--bg-2);
+  transform: translateY(-4px);
+}
+.project-card .num {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.project-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.project-card p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
 
-					</div>
-				</section>
+/* Footer */
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 120px 80px 120px 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+footer h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -3px;
+  max-width: 700px;
+  line-height: 1;
+}
+footer h2 span {
+  color: var(--accent);
+}
+footer .links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+footer .links a {
+  color: var(--text-dim);
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+footer .links a:hover { color: var(--accent); }
 
+/* Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-				<section>
-					<header>
-						<h2>Work Experience</h2>
-					</header>
-						<div class='content'>
-							<div class="school">
-								 <div class='school_logo'> <img src='images/bx_math.png' width="130" height="130"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Bronx Math Preparatory School</h4>
-								<p> Feb 2026 - Present
-								<br> Data-Driven Math Instructor</p>
-								 </div> 
-							 </div> 
-							 <div class='school'> 
-								 <div class='school_logo'> <img src='images/sd.png' width="110" height="110"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Storied Data (now Guut) </h4>
-								<p>Sep 2025 - Feb 2026
-								<br> Analyst</p>
-							 	 </div> 
-							 </div>
-							 <div class='school'> 
-								 <div class='school_logo'> <img src='images/numeraxial.png' width="110" height="110"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Numeraxial </h4>
-								<p>Feb 2025 - Aug 2025
-								<br> Summer Analyst</p>
-							 	 </div> 
-							 </div>
-							 <div class='school'> 
-								 <div class='school_logo'> <img src='images/laymans.png' width="110" height="110"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Laymans - LegalTech Startup </h4>
-								<p>June 2024 - Dec 2024
-								<br> Data Science Fellow</p>
-							 	 </div> 
-							 </div>	
-							<div class="school">
-								 <div class='school_logo'> <img src='images/nygc.png' width="140" height="140"> </div>  
-								 <div class='school_stuff'> 
-								<h4>New York Genome Center (NYGC)</h4>
-								<p> June 2024 - Aug 2024
-								<br> Research Assistant @ Vickovic Lab</p>
-								 </div> 
-							 </div> 
-							<div class="school">
-								 <div class='school_logo'> <img src='images/gsm_ucd.png' width="140" height="140"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Graduate School of Management, UC Davis</h4>
-								<p> Sep 2022 - June 2023
-								<br> Research Analyst (Mergers & Acquisitions)</p>
-								 </div> 
-							 </div> 
-							<div class="school">
-								 <div class='school_logo'> <img src='images/apple.png' width="100" height="100"> </div>  
-								 <div class='school_stuff'> 
-								<h4> Apple</h4>
-								<p> June 2022 - Aug 2022
-								<br> Intern</p>
-								 </div> 
-							 </div> 
-							<div class="school">
-								 <div class='school_logo'> <img src='images/cosmos_ucd.png' width="110" height="110"> </div>  
-								 <div class='school_stuff'> 
-								<h4> California Summer School for Math & Science (COSMOS) UC Davis</h4>
-								<p> June 2021 - June 2022
-								<br> Program Assistant</p>
-								 </div> 
-							 </div> 							 							 							 						 
-						</div>
-				</section>
+@media (max-width: 1024px) {
+  .chapter-nav { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 120px 40px 60px; }
+  .hero-left { padding-right: 0; }
+  .hero-right { order: -1; margin-bottom: 40px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .work-item { grid-template-columns: 1fr; gap: 12px; }
+  .edu-grid, .project-grid { grid-template-columns: 1fr; }
+  .section { padding-left: 40px; padding-right: 40px; }
+  footer { padding-left: 40px; padding-right: 40px; }
+}
+@media (max-width: 768px) {
+  .top-bar { padding: 16px 24px; }
+  .hero, .section, footer { padding-left: 24px; padding-right: 24px; }
+  .hero h1 { letter-spacing: -2px; }
+}
+</style>
+</head>
+<body>
 
+<div class="grid-bg"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-				<section>
-					<header>
-						<h2>Projects</h2>
-					</header>
-					<div class='content'>
-						<ul class='publications'>
-							
-							<li>
-								<h7>Stock Market Dashboard</h7>
-								<br>
-								<p> An interactive web dashboard for stock price analysis and forecasting
+<nav class="chapter-nav">
+  <a href="#home" class="active"><div class="marker"></div><span class="label">Home</span></a>
+  <a href="#about"><div class="marker"></div><span class="label">About</span></a>
+  <a href="#work"><div class="marker"></div><span class="label">Work</span></a>
+  <a href="#education"><div class="marker"></div><span class="label">Education</span></a>
+  <a href="#projects"><div class="marker"></div><span class="label">Projects</span></a>
+  <a href="#contact"><div class="marker"></div><span class="label">Contact</span></a>
+</nav>
 
-								<br>
-							 <a href="https://optimizedlp.github.io/stock-market-dashboard/"> Report </a> &ensp;
-							 <a href="https://github.com/optimizedLP/stock-market-dashboard"> Github</a> &ensp;			
-								</p>
-							</li>
+<div class="top-bar" id="topBar">
+  <div class="name">Dhruv Jani</div>
+</div>
 
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="kicker">Researcher · Builder</div>
+    <h1>Dhruv<br><span>Jani</span></h1>
+    <p class="lead">I turn complex problems into clear, data-driven decisions.</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo"><img src="images/dhruv_ucd_crop.jpg" alt="Dhruv Jani" width="1080" height="1080"></div>
+  </div>
+</section>
 
-							<li>
-								<h7>Text-2-Image</h7>
-								<br>
-								<p> Generate high-quality images from user-provided text prompts
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>Operations Research</span><span>•</span>
+    <span>Quantitative Finance</span><span>•</span>
+    <span>Machine Learning</span><span>•</span>
+    <span>Data Strategy</span><span>•</span>
+    <span>Operations Research</span><span>•</span>
+    <span>Quantitative Finance</span><span>•</span>
+    <span>Machine Learning</span><span>•</span>
+    <span>Data Strategy</span><span>•</span>
+  </div>
+</div>
 
-								<br>
-							 <a href="https://optimizedlp.github.io/text-2-image/"> Report </a> &ensp;
-							 <a href="https://github.com/optimizedLP/text-2-image"> Github</a> &ensp;			
-								</p>
-							</li>
+<section class="section" id="about">
+  <div class="section-header reveal">
+    <h2>About</h2>
+    <span class="num">01</span>
+  </div>
+  <div class="about-grid reveal">
+    <div class="pull-quote">"The best models don't just describe the world — they reveal where it's going."</div>
+    <div>
+      <p>I recently graduated from <strong>Columbia University</strong> with a Master's in Operations Research & Analytics. My work sits at the intersection of <strong>quantitative finance</strong>, <strong>machine learning</strong>, and <strong>data-driven strategy</strong>.</p>
+      <p>I've built things with <strong>Apple</strong>, <strong>NIH</strong>, <strong>NYGC</strong>, and <strong>UC Davis</strong>. Right now, I'm focused on financial modeling and applying mathematical models to market-oriented problems.</p>
+    </div>
+  </div>
+</section>
 
-							<li>
-								<h7>Drug Discovery</h7>
-								<br>
-								<p> Protein-Ligand Binding Affinity using GNNs
+<section class="section" id="work">
+  <div class="section-header reveal">
+    <h2>Experience</h2>
+    <span class="num">02</span>
+  </div>
+  <div class="work-list reveal">
+    <div class="work-item"><div class="date">2026 — Present</div><div><h4>Data-Driven Math Instructor</h4><div class="org">Bronx Math Preparatory School</div></div></div>
+    <div class="work-item"><div class="date">2025 — 2026</div><div><h4>Analyst</h4><div class="org">Storied Data (now Guut)</div></div></div>
+    <div class="work-item"><div class="date">2025</div><div><h4>Summer Analyst</h4><div class="org">Numeraxial</div></div></div>
+    <div class="work-item"><div class="date">2024</div><div><h4>Data Science Fellow</h4><div class="org">Laymans — LegalTech Startup</div></div></div>
+    <div class="work-item"><div class="date">2024</div><div><h4>Research Assistant</h4><div class="org">New York Genome Center, Vickovic Lab</div></div></div>
+    <div class="work-item"><div class="date">2022 — 2023</div><div><h4>Research Analyst, M&A</h4><div class="org">UC Davis Graduate School of Management</div></div></div>
+    <div class="work-item"><div class="date">2022</div><div><h4>Intern</h4><div class="org">Apple</div></div></div>
+  </div>
+</section>
 
-								<br>
-							 <a href="https://optimizedlp.github.io/drug-discovery/"> Report </a> &ensp;								
-							 <a href="https://github.com/optimizedLP/drug-discovery"> Github</a> &ensp;			
-								</p>
-							</li>
+<section class="section" id="education">
+  <div class="section-header reveal">
+    <h2>Education</h2>
+    <span class="num">03</span>
+  </div>
+  <div class="edu-grid reveal">
+    <div class="edu-card">
+      <div class="date">2023 — 2024</div>
+      <h3>Columbia University</h3>
+      <p>MS Operations Research & Financial Engineering</p>
+    </div>
+    <div class="edu-card">
+      <div class="date">2019 — 2023</div>
+      <h3>University of California, Davis</h3>
+      <p>BS Mathematical Analytics & Statistics — magna cum laude</p>
+    </div>
+  </div>
+</section>
 
-							<li>
-								<h7>Regenerative Organizing Cell in the Frog tail</h7>
-								<br>
-								<p>Applied Data Science for Genomics (STAT 5243) @ Columbia University
+<section class="section" id="projects">
+  <div class="section-header reveal">
+    <h2>Projects</h2>
+    <span class="num">04</span>
+  </div>
+  <div class="project-grid reveal">
+    <div class="project-card"><div class="num">01</div><h4>Stock Market Dashboard</h4><p>Interactive forecasting, risk metrics, and portfolio analysis.</p></div>
+    <div class="project-card"><div class="num">02</div><h4>Text-2-Image Generation</h4><p>GAN-based image generation from natural language prompts.</p></div>
+    <div class="project-card"><div class="num">03</div><h4>Drug Discovery with GNNs</h4><p>Protein-ligand binding affinity with Graph Neural Networks.</p></div>
+    <div class="project-card"><div class="num">04</div><h4>Image Segmentation via Min-Cut</h4><p>Discrete optimization approach to image segmentation.</p></div>
+    <div class="project-card"><div class="num">05</div><h4>U-Net Medical Imaging</h4><p>Medical image segmentation pipeline using PyTorch.</p></div>
+    <div class="project-card"><div class="num">06</div><h4>Nifty50 Financial Analysis</h4><p>Risk metrics, portfolio returns, and technical indicators.</p></div>
+  </div>
+</section>
 
-								<br>
-							 <a href="https://github.com/optimizedLP/STAT_5243/tree/main/Project%201"> Github</a> &ensp;			
-								</p>
-							</li>
+<footer id="contact">
+  <h2>Let's build something <span>worth</span> building.</h2>
+  <div class="links">
+    <a href="mailto:jani.dhruv1@gmail.com">jani.dhruv1@gmail.com</a>
+    <a href="https://github.com/optimizedLP">GitHub</a>
+    <a href="https://www.linkedin.com/in/dpjani/">LinkedIn</a>
+    <a href="https://twitter.com/Dhruv1Jani">Twitter</a>
+  </div>
+</footer>
 
-							<li>
-								<h7>Cell Segmentation Classifier(Random Forest Model)</h7>
-								<br>
-								<p> Applied Data Science for Genomics (STAT 5243) @ Columbia University
+<script>
+// Scroll progress
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = (scrollTop / scrollHeight * 100) + '%';
+});
 
-								<br>
-							 <a href="https://github.com/optimizedLP/STAT_5243/tree/main/Project%202"> Github</a> &ensp;			
-								</p>
-							</li>
+// Chapter nav active state
+const chapters = document.querySelectorAll('.hero[id], .section[id], footer[id]');
+const navLinks = document.querySelectorAll('.chapter-nav a');
+const updateActiveChapter = () => {
+  const center = window.innerHeight / 2;
+  let current = '';
+  chapters.forEach(c => {
+    if (c.getBoundingClientRect().top <= center) current = c.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+};
+window.addEventListener('scroll', updateActiveChapter, { passive: true });
+updateActiveChapter();
 
-							<li>
-								<h7>U-Net Medical Imaging Segmentation</h7>
-								<br>
-								<p>Applied Data Science for Genomics (STAT 5243) @ Columbia University
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
 
-								<br>
-							 <a href="https://github.com/optimizedLP/STAT_5243/tree/main/Project%203"> Github</a> &ensp;			
-								</p>
-							</li>
+// Top bar scroll state
+const topBar = document.getElementById('topBar');
+window.addEventListener('scroll', () => {
+  topBar.classList.toggle('scrolled', window.scrollY > 50);
+});
 
-
-							<li>
-								<h7>Image Segmentation via Minimum Cut</h7>
-								<br>
-								<p> Computational Discrete Optimization (IEOR 4008) @ Columbia University
-
-								<br>
-							 <a href="https://dpjani.github.io/image-segmentation-via-min-cut/"> Report </a> &ensp;
-							 <a href="https://github.com/optimizedLP/image-segmentation-via-min-cut"> Github</a> &ensp;
-							 <a href="https://docs.google.com/presentation/d/1sfpZtmtUAl9PbMTIEqN2Q1xjf2FPILv0ionaeIK6vJg/edit?usp=sharing"> Presentation</a>			
-								</p>
-							</li>
-
-							<li>
-								<h7>Tic-Tac-Toe Game</h7>
-								<br>
-								<p> A simple CLI implementation of the Tic-Tac-Toe game
-
-								<br>
-							 <a href="https://optimizedlp.github.io/tic-tac-toe/"> Report </a> &ensp;
-							 <a href="https://github.com/optimizedLP/tic-tac-toe"> Github</a> &ensp;			
-								</p>
-							</li>
-
-							<li>
-								<h7>Nifty50 Stocks Financial Analysis</h7>
-								<br>
-								<p> Analyze Nifty50 stock data to calculate risk metrics, portfolio returns, and technical indicators
-
-								<br>
-							 <a href="https://github.com/optimizedLP/nifty50-financial-analysis"> Report </a> &ensp;
-							 <a href="https://optimizedlp.github.io/nifty50-financial-analysis/"> Github</a> &ensp;			
-								</p>
-							</li>
-
-
-						</ul>
-					</div>
-				</section>
-					<!-- <section></section>
-					<div class="copyright">Website design from: <a href="https://html5up.net">HTML5 UP</a>.</div> -->
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+// Hide chapter nav only when marquee crosses the viewport center
+const chapterNav = document.querySelector('.chapter-nav');
+const marquee = document.querySelector('.marquee');
+const checkMarqueeCenter = () => {
+  const marqueeRect = marquee.getBoundingClientRect();
+  const marqueeCenter = (marqueeRect.top + marqueeRect.bottom) / 2;
+  const viewportCenter = window.innerHeight / 2;
+  const isCentered = Math.abs(marqueeCenter - viewportCenter) < window.innerHeight * 0.25;
+  chapterNav.classList.toggle('hidden', isCentered);
+};
+window.addEventListener('scroll', checkMarqueeCenter, { passive: true });
+checkMarqueeCenter();
+</script>
+</body>
 </html>
