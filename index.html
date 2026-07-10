@@ -346,7 +346,7 @@ a { text-decoration: none; color: inherit; }
 .work-item:hover {
   padding-left: 16px;
 }
-.work-item:hover h4 {
+.work-item:hover .role h4 {
   color: var(--accent);
 }
 .work-item .date {
@@ -358,16 +358,40 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-muted);
   padding-top: 6px;
 }
-.work-item h4 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin-bottom: 4px;
-  transition: color 0.3s;
-}
 .work-item .org {
   color: var(--text-dim);
   font-size: 0.95rem;
+}
+.work-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.work-body .roles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.work-body .role {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.work-body .role h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.work-body .role-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 /* Education */
@@ -566,16 +590,88 @@ footer .links a:hover { color: var(--accent); }
     <span class="num">02</span>
   </div>
   <div class="work-list reveal">
-    <div class="work-item"><div class="date">May 2026 — Present</div><div><h4>Analytics Engineer</h4><div class="org">Stealth AI Startup</div></div></div>
-    <div class="work-item"><div class="date">Jun 2026 — Present</div><div><h4>Data Scientist</h4><div class="org">Columbia University Irving Medical Center</div></div></div>
-    <div class="work-item"><div class="date">Jun 2025 — May 2026</div><div><h4>Research Analyst</h4><div class="org">Columbia University Irving Medical Center</div></div></div>
-    <div class="work-item"><div class="date">Jan 2025 — Jun 2025</div><div><h4>Data Analyst</h4><div class="org">NYC Public Schools</div></div></div>
-    <div class="work-item"><div class="date">Sep 2024 — Dec 2024</div><div><h4>Quantitative Analyst</h4><div class="org">Numeraxial LLC</div></div></div>
-    <div class="work-item"><div class="date">Jun 2024 — Aug 2024</div><div><h4>Computational Research Assistant @ Vickovic Lab</h4><div class="org">New York Genome Center</div></div></div>
-    <div class="work-item"><div class="date">Jan 2024 — Mar 2024</div><div><h4>Data Science Fellow</h4><div class="org">Layman, Ltd.</div></div></div>
-    <div class="work-item"><div class="date">Dec 2022 — Jun 2023</div><div><h4>Data Analyst</h4><div class="org">UC Davis Graduate School of Management</div></div></div>
-    <div class="work-item"><div class="date">Jun 2022 — Aug 2022</div><div><h4>Summer Intern</h4><div class="org">Apple</div></div></div>
-    <div class="work-item"><div class="date">Jun 2021 — Jun 2022</div><div><h4>Student Assistant</h4><div class="org">UC Davis</div></div></div>
+    <div class="work-item">
+      <div class="date">May 2026 — Present</div>
+      <div class="work-body">
+        <div class="org">Stealth AI Startup</div>
+        <div class="roles">
+          <div class="role"><h4>Analytics Engineer</h4><span class="role-date">May 2026 — Present</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Jun 2025 — Present</div>
+      <div class="work-body">
+        <div class="org">Columbia University Irving Medical Center</div>
+        <div class="roles">
+          <div class="role"><h4>Data Scientist</h4><span class="role-date">Jun 2026 — Present</span></div>
+          <div class="role"><h4>Research Analyst</h4><span class="role-date">Jun 2025 — May 2026</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Jan 2025 — Jun 2025</div>
+      <div class="work-body">
+        <div class="org">NYC Public Schools</div>
+        <div class="roles">
+          <div class="role"><h4>Data Analyst</h4><span class="role-date">Jan 2025 — Jun 2025</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Sep 2024 — Dec 2024</div>
+      <div class="work-body">
+        <div class="org">Numeraxial LLC</div>
+        <div class="roles">
+          <div class="role"><h4>Quantitative Analyst</h4><span class="role-date">Sep 2024 — Dec 2024</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Jun 2024 — Aug 2024</div>
+      <div class="work-body">
+        <div class="org">New York Genome Center</div>
+        <div class="roles">
+          <div class="role"><h4>Computational Research Assistant @ Vickovic Lab</h4><span class="role-date">Jun 2024 — Aug 2024</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Jan 2024 — Mar 2024</div>
+      <div class="work-body">
+        <div class="org">Layman, Ltd.</div>
+        <div class="roles">
+          <div class="role"><h4>Data Science Fellow</h4><span class="role-date">Jan 2024 — Mar 2024</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Dec 2022 — Jun 2023</div>
+      <div class="work-body">
+        <div class="org">UC Davis Graduate School of Management</div>
+        <div class="roles">
+          <div class="role"><h4>Data Analyst</h4><span class="role-date">Dec 2022 — Jun 2023</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Jun 2022 — Aug 2022</div>
+      <div class="work-body">
+        <div class="org">Apple</div>
+        <div class="roles">
+          <div class="role"><h4>Summer Intern</h4><span class="role-date">Jun 2022 — Aug 2022</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="date">Jun 2021 — Jun 2022</div>
+      <div class="work-body">
+        <div class="org">UC Davis</div>
+        <div class="roles">
+          <div class="role"><h4>Student Assistant</h4><span class="role-date">Jun 2021 — Jun 2022</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
